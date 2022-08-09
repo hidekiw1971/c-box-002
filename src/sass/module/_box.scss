@@ -1,0 +1,82 @@
+@use "global" as *;
+
+.test {
+  width: calc(100% / 1.5);
+  background: #333;
+  margin: 0 auto;
+  font-size: 0; //謎の隙間はこれで消えるが文字表示も消えた
+}
+
+.box {
+  display: inline-block;
+  width: calc(100% / 1);
+  font-size: 0; //謎の隙間はこれで消えるが文字表示も消えた
+}
+
+.box li {
+  display: inline-block;
+}
+
+.box__wrap {
+  width: 200px;
+  position: relative;
+}
+
+.box__wrap::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.box__inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: rem(16);
+  color: #fff;
+}
+
+/* ALLの調整 */
+.box__wrap1 {
+  width: 140px;
+}
+
+.box__wrap1::before {
+  padding-top: 21.42%;
+  background: #f00;
+}
+
+/* カテゴリ１の調整 */
+.box__wrap2 {
+  width: 100px;
+}
+
+.box__wrap2::before {
+  padding-top: 30%;
+  background: #ff0;
+}
+
+/* カテゴリカテゴリの調整 */
+.box__wrap3 {
+  width: 200px;
+}
+
+.box__wrap3::before {
+  padding-top: 15%;
+  background: #f4f;
+}
+
+/* カテの調整 */
+.box__wrap4 {
+  width: 120px;
+}
+
+.box__wrap4::before {
+  padding-top: 25%;
+  background: #1bf;
+}
